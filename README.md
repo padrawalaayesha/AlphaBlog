@@ -65,3 +65,6 @@ Things you may want to cover:
   <%=link_to'Delete', article_path(@article), method: :delete ,data: {confirm: "Are you sure you want to delete ?"}%> |
   <%=link_to'Return to article listing', articles_path%>
 </p>
+<li class="nav-item">
+              <%=link_to'Articles',articles_path, class:"nav-link"%>
+              </li>
