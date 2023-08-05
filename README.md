@@ -22,3 +22,46 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+ <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th colspan = "3">Actions</th>
+      </tr>
+    </thead>
+    <tbody><% @articles.each do |article|%>
+        <tr>
+          <td><%= article.title %></td>
+          <td><%=article.description %></td>
+          <td><%=link_to 'Show', article_path(article)%></td>
+          <td><%= link_to 'Edit',edit_article_path(article)%></td>
+          <td><%=link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure you want to delete ?"}%></td>
+        </tr>
+        <% end%>
+    </tbody>
+  </table>
+  <p>
+  <%=link_to'Create a new article', new_article_path%>
+  </p>
+  <%if @article.errors.any?%>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <h4 class="alert-heading">The following errors prevented the creation of article</h4>
+    <ul>
+    <%@article.errors.full_messages.each do |msg|%>
+        <li><%=msg%></li>
+    <%end%>
+   </ul>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+       <span aria-hidden="true">&times;</span>
+    </button>
+ </div>
+<%end%>
+<h1>Showing article details </h1>
+<p><strong>Title: </strong><%= @article.title %></p>
+<p><strong>Description: </strong><%= @article.description %></p>
+<p>
+  <%=link_to'Edit',edit_article_path(@article)%> |
+  <%=link_to'Delete', article_path(@article), method: :delete ,data: {confirm: "Are you sure you want to delete ?"}%> |
+  <%=link_to'Return to article listing', articles_path%>
+</p>
