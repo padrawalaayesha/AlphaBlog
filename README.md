@@ -68,3 +68,6 @@ Things you may want to cover:
 <li class="nav-item">
               <%=link_to'Articles',articles_path, class:"nav-link"%>
               </li>
+               <li class="nav-item">
+                  <%=link_to current_user.username ,user_path(current_user), class:"nav-link "%>
+                 </li>
