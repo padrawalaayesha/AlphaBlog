@@ -44,6 +44,9 @@ body {
 #sticky-footer{
     flex-shrink: none;
 }
+.custom-select-with-prompt::placeholder{
+  color:red
+}
 
 .flickr_pagination {
     text-align: center;

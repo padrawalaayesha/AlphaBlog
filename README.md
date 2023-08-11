@@ -71,6 +71,7 @@ Things you may want to cover:
                <li class="nav-item">
                   <%=link_to current_user.username ,user_path(current_user), class:"nav-link "%>
                  </li>
+<%=link_to category.name , category_path(category), class:"fs-4 badge bg-info text-light"%>
   test "should create category" do
     assert_difference('Category.count') do
       post categories_url, params: { category: {  } }
